@@ -720,67 +720,113 @@ a {
 }
 
 /* ==================================================
-   17. RESPONSIVE - FIXED (TETAP GEPENG)
+   17. RESPONSIVE (OPTIMAL UNTUK DEVICE HP ASLI)
 ================================================== */
+
+/* TABLET & HP LANDSCAPE */
 @media (max-width: 992px) {
   .about-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
+  .contact-grid,
+  .review-flex {
+    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+    text-align: center;
   }
 
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 36px !important;
   }
 }
 
+/* HP STANDAR (DEVICE ASLI) */
 @media (max-width: 768px) {
-  /* NAVBAR - Dibuat lebih ringkas */
+  /* NAVBAR - Dibuat Minimalis */
   .navbar {
     flex-direction: column;
-    justify-content: center;
     padding: 15px 0;
-    gap: 15px;
-  }
-
-  .nav-menu {
-    justify-content: center;
     gap: 12px;
   }
 
-  .nav-cta {
-    display: none; /* Sembunyikan tombol daftar di HP agar tidak penuh */
+  .nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Supaya menu aman kalau layar sangat sempit */
   }
 
-  /* FOOTER - INI YANG BIKIN TETAP GEPENG */
+  .nav-menu a {
+    font-size: 13px;
+  }
+
+  .nav-cta {
+    display: none; /* Sembunyikan tombol daftar di HP agar bersih */
+  }
+
+  /* LAYOUT UMUM HP */
+  .container {
+    width: 92% !important;
+  }
+
+  section {
+    padding: 50px 0 !important; /* Jarak antar section diperkecil agar tidak terlalu panjang */
+  }
+
+  .hero-text h1 {
+    font-size: 28px !important;
+    line-height: 1.2;
+  }
+
+  .section-heading h2 {
+    font-size: 26px !important;
+  }
+
+  /* FOOTER - Tetap Berjajar Ke Samping (Fit Device) */
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
   .footer-socials, 
   .footer-nav {
-    flex-direction: row !important; /* Paksa tetap ke samping */
+    display: flex !important;
+    flex-direction: row !important; 
     justify-content: center !important;
-    flex-wrap: nowrap !important; /* Jangan biarkan teks turun */
-    gap: 12px; /* Jarak antar menu dikecilkan agar muat */
+    flex-wrap: nowrap !important; 
+    gap: 12px; 
   }
 
   .footer-socials a, 
   .footer-nav a {
-    font-size: 11px; /* Ukuran font dikecilkan sedikit khusus HP */
-    white-space: nowrap; /* Teks tidak akan pecah jadi 2 baris */
+    font-size: 11px !important; 
+    white-space: nowrap; 
   }
 
-  /* TIPOGRAFI HP */
-  .hero-text h1 {
-    font-size: 30px;
-  }
-
-  .section-heading h2 {
-    font-size: 28px;
+  .footer-copy {
+    font-size: 10px;
+    margin-top: 10px;
   }
 }
 
+/* HP KECIL (DEVICE LAMA) */
 @media (max-width: 480px) {
-  /* Untuk HP yang sangat kecil agar tidak keluar layar */
+  .hero-text h1 {
+    font-size: 24px !important;
+  }
+
   .footer-socials, 
   .footer-nav {
     gap: 8px;
-    font-size: 10px;
+  }
+
+  .footer-socials a, 
+  .footer-nav a {
+    font-size: 10px !important;
   }
 }
