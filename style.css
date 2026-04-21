@@ -1,5 +1,6 @@
 /* ==================================================
-RESET DASAR
+   1. RESET DASAR
+   Bagian ini menghapus margin dan padding bawaan browser.
 ================================================== */
 * {
   margin: 0;
@@ -8,7 +9,7 @@ RESET DASAR
 }
 
 /* ==================================================
-PENGATURAN GLOBAL
+   2. PENGATURAN GLOBAL
 ================================================== */
 html {
   scroll-behavior: smooth;
@@ -31,7 +32,7 @@ a {
 }
 
 /* ==================================================
-CONTAINER UMUM
+   3. CONTAINER UMUM
 ================================================== */
 .container {
   width: 90%;
@@ -40,7 +41,13 @@ CONTAINER UMUM
 }
 
 /* ==================================================
-BACKGROUND SECTION
+   4. BACKGROUND SECTION
+   Semua section disiapkan agar mudah diganti background fotonya.
+
+   CARA PAKAI FOTO SENDIRI:
+   1. Simpan foto di folder images
+   2. Cari section yang mau diganti di bawah
+   3. Aktifkan background-image yang masih dikomentari
 ================================================== */
 .section-bg,
 .hero-section,
@@ -83,7 +90,7 @@ BACKGROUND SECTION
 }
 
 /* ==================================================
-LABEL KECIL DAN JUDUL SECTION
+   5. LABEL KECIL DAN JUDUL SECTION
 ================================================== */
 .section-label {
   display: inline-block;
@@ -119,7 +126,7 @@ LABEL KECIL DAN JUDUL SECTION
 }
 
 /* ==================================================
-BUTTON / TOMBOL
+   6. BUTTON / TOMBOL
 ================================================== */
 .btn {
   display: inline-block;
@@ -147,7 +154,7 @@ BUTTON / TOMBOL
 }
 
 /* ==================================================
-BUTTON / TOMBOL
+   6. BUTTON / TOMBOL
 ================================================== */
 .btn {
   display: inline-block;
@@ -175,7 +182,9 @@ BUTTON / TOMBOL
 }
 
 /* ==================================================
-HEADER / NAVBAR
+   7. HEADER / NAVBAR
+   Navbar dibuat mirip versi literago-landing-simple:
+   gelap transparan, menu tengah, CTA di kanan.
 ================================================== */
 .site-header {
   position: fixed;
@@ -189,7 +198,7 @@ HEADER / NAVBAR
 }
 
 .navbar {
-  min-height: 100px; 
+  min-height: 100px; /* Ditambah dikit biar logo gede gak sesak */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -200,16 +209,16 @@ HEADER / NAVBAR
 }
 
 .logo {
-  width: 210px; 
+  width: 210px; /* Ukuran digedein (sebelumnya 175px) */
   height: auto;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4)); 
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4)); /* Efek Drop Shadow */
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 45px; 
+  gap: 45px; /* Jarak antar menu diperlebar (sebelumnya 28px) */
   flex: 2;
 }
 
@@ -224,13 +233,15 @@ HEADER / NAVBAR
   color: #ffdccf;
 }
 
+/* Penyeimbang agar menu tetap di tengah */
 .navbar::after {
   content: "";
   flex: 1; 
 }
 
 /* ==================================================
-HERO / HOME
+   8. HERO / HOME
+   Placeholder kanan dihapus. Hero fokus ke teks dan background.
 ================================================== */
 .hero-content {
   display: flex;
@@ -294,7 +305,7 @@ HERO / HOME
 }
 
 /* ==================================================
-BOOKS SECTION
+   9. BOOKS SECTION
 ================================================== */
 .books-section {
   padding: 80px 10%;
@@ -321,7 +332,7 @@ BOOKS SECTION
 }
 
 /* ==================================================
-   TENTANG KAMI
+   10. TENTANG KAMI
 ================================================== */
 .about-grid {
   display: grid;
@@ -365,7 +376,7 @@ BOOKS SECTION
 }
 
 /* ==================================================
-   FITUR
+   11. FITUR
 ================================================== */
 .features-grid {
   display: grid;
@@ -406,7 +417,7 @@ BOOKS SECTION
 }
 
 /* ==================================================
-   ALUR
+   12. ALUR
 ================================================== */
 .flow-wrapper {
   background: linear-gradient(
@@ -455,7 +466,7 @@ BOOKS SECTION
 }
 
 /* ==================================================
-   KONTAK
+   13. KONTAK
 ================================================== */
 .contact-grid {
   display: grid;
@@ -509,6 +520,9 @@ BOOKS SECTION
   border-color: #315c98;
 }
 
+/* ==================================================
+  15 SECTION REVIEW
+================================================== */
 /* ==================================================
    SECTION REVIEW + PHONE SIDE BY SIDE
 ================================================== */
@@ -633,7 +647,7 @@ BOOKS SECTION
   /* Tombol Pinjam Biru Cerah */
   .book-info button {
     font-size: 12px;
-    background: #50aaff; 
+    background: #50aaff; /* Biru sesuai foto */
     color: white;
     border: none;
     padding: 6px 15px;
@@ -648,12 +662,12 @@ BOOKS SECTION
   }
 
 /* ==================================================
- FOOTER 
+   16. FOOTER - Versi Gepeng (Horizontal)
 ================================================== */
 .footer-bg-simple {
   background: rgba(11, 16, 29, 0.96);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 30px 0; 
+  padding: 30px 0; /* Memberi ruang agar tidak terlalu sesak */
 }
 
 .footer-simple {
@@ -662,24 +676,24 @@ BOOKS SECTION
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 20px; 
+  gap: 20px; /* Jarak antara baris kontak, menu, dan copyright */
 }
 
 .footer-socials,
 .footer-nav {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row; /* PAKSA HORIZONTAL */
   align-items: center;
   justify-content: center;
-  gap: 30px;
-  flex-wrap: nowrap;
+  gap: 30px; /* Jarak antar link */
+  flex-wrap: nowrap; /* Jangan biarkan dia turun ke baris baru */
 }
 
 .footer-socials a,
 .footer-nav a {
   color: #f3f7ff;
   font-size: 14px;
-  white-space: nowrap; 
+  white-space: nowrap; /* Teks tidak akan pecah jadi 2 baris */
   transition: 0.3s ease;
   display: flex;
   align-items: center;
@@ -706,7 +720,7 @@ BOOKS SECTION
 }
 
 /* ==================================================
-RESPONSIVE 
+   17. RESPONSIVE (OPTIMAL UNTUK DEVICE HP ASLI)
 ================================================== */
 
 /* TABLET & HP LANDSCAPE */
@@ -742,7 +756,7 @@ RESPONSIVE
     display: flex;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap; /* Supaya menu aman kalau layar sangat sempit */
   }
 
   .nav-menu a {
@@ -750,7 +764,7 @@ RESPONSIVE
   }
 
   .nav-cta {
-    display: none; 
+    display: none; /* Sembunyikan tombol daftar di HP agar bersih */
   }
 
   /* LAYOUT UMUM HP */
@@ -771,7 +785,7 @@ RESPONSIVE
     font-size: 26px !important;
   }
 
-  /* FOOTER */
+  /* FOOTER - Tetap Berjajar Ke Samping (Fit Device) */
   .footer-content {
     display: flex;
     flex-direction: column;
@@ -814,146 +828,5 @@ RESPONSIVE
   .footer-socials a, 
   .footer-nav a {
     font-size: 10px !important;
-  }
-}
-/* ==================================================
-   FINAL RESPONSIVE FIX 
-================================================== */
-
-/* GLOBAL SAFETY */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* =========================
-   TABLET & HP
-========================= */
-@media (max-width: 992px) {
-
-  /* HERO */
-  .hero-flex {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-form {
-    width: 100%;
-    max-width: 320px;
-    margin-top: 20px;
-  }
-
-  /* ABOUT & CONTACT */
-  .about-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  /* REVIEW */
-  .review-flex {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  /* FEATURES */
-  .features-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  /* BOOKS */
-  .books-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-
-/* =========================
-   HP (MOBILE)
-========================= */
-@media (max-width: 768px) {
-
-  /* NAVBAR */
-  .navbar {
-    flex-direction: column;
-    gap: 10px;
-    padding: 15px 0;
-  }
-
-  .nav-menu {
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  .nav-menu a {
-    font-size: 13px;
-  }
-
-  /* HERO TEXT */
-  .hero-text h1 {
-    font-size: 28px;
-    line-height: 1.2;
-  }
-
-  .hero-description {
-    font-size: 14px;
-  }
-
-  /* SECTION TITLE */
-  .section-heading h2 {
-    font-size: 26px;
-  }
-
-  /* FEATURES JADI 1 KOLOM */
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* BOOK JADI 2 KOLOM */
-  .books-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* REVIEW */
-  .review-flex {
-    flex-direction: column;
-  }
-
-  /* MOCKUP HP (INI YANG PENTING) */
-  .phone {
-    width: 100%;
-    max-width: 230px;
-    height: auto;
-    margin: 0 auto;
-  }
-
-  .screen {
-    height: auto;
-  }
-}
-
-
-/* =========================
-   HP KECIL
-========================= */
-@media (max-width: 480px) {
-
-  /* BOOK JADI 1 KOLOM */
-  .books-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* FONT LEBIH KECIL */
-  .hero-text h1 {
-    font-size: 24px;
-  }
-
-  .section-heading h2 {
-    font-size: 22px;
-  }
-
-  /* PHONE LEBIH KECIL */
-  .phone {
-    max-width: 200px;
   }
 }
