@@ -1,275 +1,959 @@
+/* ==================================================
+RESET DASAR
+================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+}
+
+/* ==================================================
+PENGATURAN GLOBAL
+================================================== */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #f9fbfd;
+  font-family: "Poppins", sans-serif;
+  background-color: #0f2f60;
+  color: #f7fbff;
+  line-height: 1.7;
 }
 
-/* CONTAINER */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ==================================================
+CONTAINER UMUM
+================================================== */
 .container {
   width: 90%;
-  max-width: 1200px;
-  margin: auto;
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
-/* HERO */
-.hero-top {
-  height: 60vh;
-  background: url("images/bg-hero.jpg") center/cover no-repeat;
+/* ==================================================
+BACKGROUND SECTION
+================================================== */
+.section-bg,
+.hero-section,
+.footer-bg {
   position: relative;
+  overflow: hidden;
+  background-color: #0f2f60;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.overlay {
+.hero-section {
+  padding: 150px 0 120px;
+}
+
+.about-section, .features-section, .flow-section, .contact-section {
+  padding: 90px 0;
+}
+
+.footer-bg {
+  padding: 28px 0;
+}
+
+.section-overlay,
+.hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: linear-gradient(
+    180deg,
+    rgba(8, 23, 49, 0.62),
+    rgba(15, 47, 96, 0.72)
+  );
 }
 
-/* MAIN SECTION */
-.main-section {
-  padding: 80px 0;
-  margin-top: -120px;
+.section-content,
+.hero-content {
   position: relative;
   z-index: 2;
 }
 
-.main-content {
+/* ==================================================
+LABEL KECIL DAN JUDUL SECTION
+================================================== */
+.section-label {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.section-label-light {
+  background-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  font-size: 38px;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  color: #dbe7f7;
+}
+
+/* ==================================================
+BUTTON / TOMBOL
+================================================== */
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #ff6b35;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.28);
+}
+
+.btn-primary:hover {
+  background-color: #e75b29;
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+/* ==================================================
+BUTTON / TOMBOL
+================================================== */
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #ff6b35;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.28);
+}
+
+.btn-primary:hover {
+  background-color: #e75b29;
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+/* ==================================================
+HEADER / NAVBAR
+================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(0, 119, 255, 0.18);
+  backdrop-filter: blur(12px);
+}
+
+.navbar {
+  min-height: 100px; 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
 }
 
-/* TEXT (KANAN) */
-.right {
+.logo-link {
   flex: 1;
-  max-width: 500px;
 }
 
-.right h1 {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
+.logo {
+  width: 210px; 
+  height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4)); 
 }
 
-.right p {
-  margin-bottom: 20px;
-  line-height: 1.6;
-  color: #555;
-}
-
-/* FORM */
-.email-form {
+.nav-menu {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 45px; 
+  flex: 2;
 }
 
-.email-form input {
-  flex: 1;
+.nav-menu a {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #ffdccf;
+}
+
+.navbar::after {
+  content: "";
+  flex: 1; 
+}
+
+/* ==================================================
+HERO / HOME
+================================================== */
+.hero-content {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+}
+
+.hero-flex {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-form {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  color: #173055;
+}
+
+.hero-form h3 {
+  margin-bottom: 20px;
+}
+
+.hero-form input {
+  width: 100%;
   padding: 12px;
-  border-radius: 6px;
+  margin-bottom: 15px;
+  border-radius: 10px;
   border: 1px solid #ddd;
 }
 
-.email-form button {
-  padding: 12px 20px;
-  border: none;
-  background: #4facfe;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.email-form button:hover {
-  background: #2f8ef5;
-}
-
-/* PHONE */
-.left {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-.app-header img {
+.hero-form button {
   width: 100%;
-  height: 50px; /* ubah sesuai selera */
-  object-fit: cover;
-}
-.phone {
-  width: 240px;
-  height: 430px;
-  background: black;
-  border-radius: 25px;
-  padding: 10px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
-
-.screen {
-  background: white;
-  height: 100%;
-  border-radius: 15px;
   padding: 12px;
-  overflow-y: auto;
-}
-
-/* HEADER APP */
-.app-header {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.app-header img {
-  width: 600px;
-  margin-bottom: 5px;
-}
-
-/* BOOK ITEM */
-.book-item {
-  display: flex;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.book-item img {
-  width: 55px;
-  height: 75px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.book-info h5 {
-  font-size: 13px;
-}
-
-.rating {
-  font-size: 12px;
-  margin: 4px 0;
-}
-
-.book-info button {
-  font-size: 11px;
-  background: #4facfe;
+  background: #2563eb;
   color: white;
   border: none;
-  padding: 5px 8px;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
-/* FEATURES */
-.features {
-  padding: 60px 0;
-  text-align: center;
+.hero-text {
+  max-width: 760px;
 }
 
-.feature-list {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+.hero-text h1 {
+  font-size: 58px;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  color: #ffffff;
 }
 
-.feature {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+.hero-description {
+  max-width: 610px;
+  font-size: 18px;
+  color: #dbe7f7;
+  margin-bottom: 28px;
 }
 
-/* BOOK GRID */
-.books {
-  padding: 60px 0;
-  text-align: center;
+/* ==================================================
+BOOKS SECTION
+================================================== */
+.books-section {
+  padding: 80px 10%;
 }
 
-.book-grid {
+.books-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .book-card {
-  background: white;
-  padding: 10px;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.book-card:hover {
-  transform: translateY(-5px);
+  background: #f3f4f6;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  color: #173055;
 }
 
 .book-card img {
   width: 100%;
-  border-radius: 6px;
-}
-
-/* TESTIMONIAL */
-.testimonial {
-  padding: 60px 0;
-  text-align: center;
-}
-
-.testimonial-list {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.testimonial-card {
-  background: white;
-  padding: 20px;
   border-radius: 10px;
-  text-align: left;
+}
+
+/* ==================================================
+   TENTANG KAMI
+================================================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.about-text h2 {
+  font-size: 38px;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.about-text p {
+  color: #dbe7f7;
+  margin-bottom: 14px;
+}
+
+.about-points {
+  display: grid;
+  gap: 18px;
+}
+
+.about-card {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  padding: 24px;
+  backdrop-filter: blur(8px);
+}
+
+.about-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.about-card p {
+  color: #e8f2ff;
+}
+
+/* ==================================================
+   FITUR
+================================================== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feature-card {
+  background-color: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 24px;
+  padding: 28px 24px;
+  min-height: 260px;
+  box-shadow: 0 12px 26px rgba(8, 23, 49, 0.12);
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background-color: #f4eceb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.feature-card h3 {
+  font-size: 19px;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  color: #173055;
+}
+
+.feature-card p {
+  color: #64748b;
+}
+
+/* ==================================================
+   ALUR
+================================================== */
+.flow-wrapper {
+  background: linear-gradient(
+    180deg,
+    rgba(53, 75, 114, 0.92) 0%,
+    rgba(41, 67, 104, 0.92) 100%
+  );
+  border-radius: 28px;
+  padding: 34px 24px;
+  box-shadow: 0 18px 40px rgba(41, 67, 104, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.flow-top {
+  margin-bottom: 22px;
+}
+
+.flow-top h2 {
+  color: #ffffff;
+  font-size: 36px;
+  line-height: 1.3;
+  max-width: 720px;
+}
+
+.flow-list {
+  display: grid;
+  gap: 18px;
+}
+
+.flow-item {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  padding: 22px 20px;
+}
+
+.flow-item h3 {
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.flow-item p {
+  color: #e2e9f3;
+  max-width: 760px;
+}
+
+/* ==================================================
+   KONTAK
+================================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+  align-items: start;
+}
+
+.contact-text h2 {
+  font-size: 38px;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.contact-text p {
+  color: #dbe7f7;
+}
+
+.contact-form {
+  background-color: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 22px;
+  padding: 28px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #173055;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #ccd8e6;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  color: #173055;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #315c98;
+}
+
+/* ==================================================
+   SECTION REVIEW + PHONE SIDE BY SIDE
+================================================== */
+.review-section {
+  padding: 90px 0;
+  background-color: #f7fbff;
+}
+
+.review-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.review-content-side {
   flex: 1;
 }
 
-.user {
+.review-vertical-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.review-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.review-text {
+  font-size: 15px;
+  color: #173055;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.review-user {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 15px;
+  gap: 12px;
 }
 
-.user img {
+.user-img {
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
-/* CTA */
-.cta-section {
-  padding: 60px 0;
-  text-align: center;
+.user-info h4 {
+  color: #173055;
+  font-size: 14px;
+  margin-bottom: 2px;
 }
 
-.center {
+.stars {
+  color: #ffb800;
+  font-size: 12px;
+}
+
+/* CSS PHONE */
+.phone-side {
+  flex: 0 0 auto;
+  display: flex;
   justify-content: center;
-  margin-top: 20px;
 }
 
-/* FOOTER */
-footer {
+.phone {
+  width: 260px;
+  height: 480px;
+  background: #000;
+  border-radius: 35px;
+  padding: 12px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+  border: 4px solid #333;
+}
+  .screen {
+    background: white;
+    height: 100%;
+    border-radius: 15px;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .app-header img.logo-mockup {
+  width: 120px;
+  margin-bottom: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .book-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+    margin-top: 5px;
+    text-align: left;
+  }
+
+  .book-item img {
+    width: 65px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .book-info h5 {
+    font-size: 14px;
+    color: #111;
+    font-weight: 700;
+  }
+
+  /* Tombol Pinjam Biru Cerah */
+  .book-info button {
+    font-size: 12px;
+    background: #50aaff; 
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .rating {
+    font-size: 12px;
+    margin: 2px 0 6px 0;
+  }
+
+/* ==================================================
+ FOOTER 
+================================================== */
+.footer-bg-simple {
+  background: rgba(11, 16, 29, 0.96);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 30px 0; 
+}
+
+.footer-simple {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 20px;
-  background: black;
-  color: white;
+  gap: 20px; 
 }
 
-/* RESPONSIVE */
-@media(max-width: 768px){
-  .main-content {
+.footer-socials,
+.footer-nav {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+.footer-socials a,
+.footer-nav a {
+  color: #f3f7ff;
+  font-size: 14px;
+  white-space: nowrap; 
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-socials a i {
+  font-size: 16px;
+}
+
+.footer-socials a:hover,
+.footer-nav a:hover {
+  color: #ffdccf;
+}
+
+.footer-copy {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  margin-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 15px;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* ==================================================
+RESPONSIVE 
+================================================== */
+
+/* TABLET & HP LANDSCAPE */
+@media (max-width: 992px) {
+  .about-grid,
+  .contact-grid,
+  .review-flex {
+    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 36px !important;
+  }
+}
+
+/* HP STANDAR (DEVICE ASLI) */
+@media (max-width: 768px) {
+  /* NAVBAR - Dibuat Minimalis */
+  .navbar {
+    flex-direction: column;
+    padding: 15px 0;
+    gap: 12px;
+  }
+
+  .nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; 
+  }
+
+  .nav-menu a {
+    font-size: 13px;
+  }
+
+  .nav-cta {
+    display: none; 
+  }
+
+  /* LAYOUT UMUM HP */
+  .container {
+    width: 92% !important;
+  }
+
+  section {
+    padding: 50px 0 !important; /* Jarak antar section diperkecil agar tidak terlalu panjang */
+  }
+
+  .hero-text h1 {
+    font-size: 28px !important;
+    line-height: 1.2;
+  }
+
+  .section-heading h2 {
+    font-size: 26px !important;
+  }
+
+  /* FOOTER */
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .footer-socials, 
+  .footer-nav {
+    display: flex !important;
+    flex-direction: row !important; 
+    justify-content: center !important;
+    flex-wrap: nowrap !important; 
+    gap: 12px; 
+  }
+
+  .footer-socials a, 
+  .footer-nav a {
+    font-size: 11px !important; 
+    white-space: nowrap; 
+  }
+
+  .footer-copy {
+    font-size: 10px;
+    margin-top: 10px;
+  }
+}
+
+/* HP KECIL (DEVICE LAMA) */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 24px !important;
+  }
+
+  .footer-socials, 
+  .footer-nav {
+    gap: 8px;
+  }
+
+  .footer-socials a, 
+  .footer-nav a {
+    font-size: 10px !important;
+  }
+}
+/* ==================================================
+   FINAL RESPONSIVE FIX 
+================================================== */
+
+/* GLOBAL SAFETY */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   TABLET & HP
+========================= */
+@media (max-width: 992px) {
+
+  /* HERO */
+  .hero-flex {
     flex-direction: column;
     text-align: center;
   }
 
-  .book-grid {
+  .hero-form {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 20px;
+  }
+
+  /* ABOUT & CONTACT */
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  /* REVIEW */
+  .review-flex {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* FEATURES */
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* BOOKS */
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================
+   HP (MOBILE)
+========================= */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+  }
+
+  .nav-menu {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .nav-menu a {
+    font-size: 13px;
+  }
+
+  /* HERO TEXT */
+  .hero-text h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  /* SECTION TITLE */
+  .section-heading h2 {
+    font-size: 26px;
+  }
+
+  /* FEATURES JADI 1 KOLOM */
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* BOOK JADI 2 KOLOM */
+  .books-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .testimonial-list {
+  /* REVIEW */
+  .review-flex {
     flex-direction: column;
+  }
+
+  /* MOCKUP HP (INI YANG PENTING) */
+  .phone {
+    width: 100%;
+    max-width: 230px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .screen {
+    height: auto;
+  }
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+@media (max-width: 480px) {
+
+  /* BOOK JADI 1 KOLOM */
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* FONT LEBIH KECIL */
+  .hero-text h1 {
+    font-size: 24px;
+  }
+
+  .section-heading h2 {
+    font-size: 22px;
+  }
+
+  /* PHONE LEBIH KECIL */
+  .phone {
+    max-width: 200px;
   }
 }
