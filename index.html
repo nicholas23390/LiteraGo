@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LiteraGo | Landing Page</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FILE CSS UTAMA -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ========================================
+       HEADER / NAVBAR
+       Navbar dibuat mirip versi literago-landing-simple:
+       logo di kiri, menu di tengah, tombol CTA di kanan.
+  ========================================= -->
+    <header class="site-header">
+      <div class="container navbar">
+        <a href="#home" class="logo-link" aria-label="Kembali ke home">
+          <img
+            src="images/logo-literago.png"
+            alt="Logo LiteraGo"
+            class="logo"
+          />
+        </a>
+
+        <nav class="nav-menu" aria-label="Navigasi utama website">
+          <a href="#home">Home</a>
+          <a href="#tentang">Tentang Kami</a>
+          <a href="#fitur">Fitur</a>
+          <a href="#alur">Alur</a>
+          <a href="#kontak">Kontak</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ========================================
+       MAIN CONTENT
+       Semua isi utama landing page ada di dalam main.
+  ========================================= -->
+    <main>
+      <!-- ========================================
+         SECTION HOME / HERO
+         Placeholder gambar hero dihapus.
+         Bagian ini sengaja dikosongkan di sisi visual supaya kamu
+         bisa menambahkan background foto sendiri lewat CSS.
+
+         CARA GANTI BACKGROUND HOME:
+         Buka style.css lalu cari .hero-section
+         kemudian aktifkan background-image yang sudah diberi komentar.
+    ========================================= -->
+     <section id="home" class="hero-section">
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content hero-flex">
+
+    <!-- KIRI: TEXT -->
+    <div class="hero-text">
+      <p class="section-label section-label-light">
+        Aplikasi Peminjaman Buku Digital
+      </p>
+
+      <h1>
+        Temukan perpustakaan terdekat dan akses buku dengan lebih mudah
+        bersama LiteraGo.
+      </h1>
+
+      <p class="hero-description">
+        LiteraGo membantu pengguna mencari, meminjam, dan menyimpan buku
+        dengan lebih praktis.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#fitur" class="btn btn-primary">Lihat Fitur</a>
+        <a href="#kontak" class="btn btn-secondary">Hubungi Kami</a>
+      </div>
+    </div>
+
+    <!-- KANAN: FORM (INI YANG BARU) -->
+    <div class="hero-form">
+      <h3>Dapatkan Akses Awal</h3>
+
+      <input type="text" placeholder="Nama Lengkap">
+      <input type="email" placeholder="Email">
+
+      <button>Daftar Sekarang</button>
+    </div>
+
+  </div>
+</section>
+
+      <!-- ========================================
+         SECTION TENTANG KAMI
+         Bagian ini bisa diberi background foto sendiri dari CSS.
+    ========================================= -->
+      <section id="tentang" class="about-section section-bg">
+        <div class="section-overlay"></div>
+        <div class="container about-grid section-content">
+          <div class="about-text">
+            <p class="section-label section-label-light">Tentang Kami</p>
+            <h2>
+              LiteraGo hadir untuk membuat proses pencarian dan peminjaman buku
+              menjadi lebih sederhana.
+            </h2>
+            <p>
+              LiteraGo dirancang sebagai aplikasi yang membantu pengguna mencari
+              perpustakaan berdasarkan wilayah, melihat ketersediaan koleksi,
+              melakukan peminjaman, serta memantau buku yang sedang dipinjam.
+            </p>
+            <p>
+              Platform ini dirancang khusus untuk mengoptimalkan pengalaman literasi digital Anda dengan menyediakan akses cepat ke berbagai layanan perpustakaan secara terintegrasi dan efisien.
+            </p>
+          </div>
+
+          <div class="about-points">
+            <article class="about-card">
+              <h3>Berbasis Lokasi</h3>
+              <p>
+                Koleksi yang tampil menyesuaikan perpustakaan yang dipilih
+                pengguna.
+              </p>
+            </article>
+
+            <article class="about-card">
+              <h3>Lebih Praktis</h3>
+              <p>
+                Pengguna tidak perlu berpindah-pindah platform untuk mencari,
+                menyimpan, dan meminjam buku.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================
+         SECTION FITUR
+         Kartu fitur dibuat seperti referensi yang kamu kirim.
+         Kalau mau tambah fitur, duplikat article.feature-card.
+    ========================================= -->
+      <section id="fitur" class="features-section section-bg">
+        <div class="section-overlay"></div>
+        <div class="container section-content">
+          <div class="section-heading section-heading-light">
+            <p class="section-label section-label-light">Fitur Utama</p>
+            <h2>
+              Fitur yang membantu pengguna mengakses buku secara lebih
+              terstruktur
+            </h2>
+            <p>
+              Nikmati kemudahan akses literasi dalam satu genggaman. Dari pencarian cerdas hingga sistem peminjaman otomatis, semua dirancang untuk kenyamanan membaca Anda.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <article class="feature-card">
+              <div class="feature-icon">📍</div>
+              <h3>Pilih Perpustakaan Terdekat</h3>
+              <p>
+                Pengguna dapat mencari perpustakaan berdasarkan wilayah lalu
+                memilih lokasi yang paling relevan sebelum melihat stok buku.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">🔎</div>
+              <h3>Pencarian Buku dan Kategori</h3>
+              <p>
+                Cari berdasarkan judul, penulis, tahun, atau langsung masuk ke
+                kategori seperti fiksi, teknologi, biografi, dan komik.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">🛒</div>
+              <h3>Peminjaman Lebih Terkontrol</h3>
+              <p>
+                Pengguna memilih buku, menentukan return date, waktu
+                pengambilan, dan metode pembayaran sebelum konfirmasi akhir.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">❤️</div>
+              <h3>Wishlist untuk Buku yang Belum Tersedia</h3>
+              <p>
+                Buku yang belum tersedia tetap bisa disimpan, sehingga pengguna
+                tidak perlu mencarinya ulang nanti.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">🔔</div>
+              <h3>Pengingat Jatuh Tempo</h3>
+              <p>
+                LiteraGo menampilkan notifikasi pengembalian agar pengguna tidak
+                lupa batas pinjam buku.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">❓</div>
+              <h3>Pusat Bantuan Terintegrasi</h3>
+              <p>
+                FAQ, chat, telepon, dan email disiapkan untuk membantu pengguna
+                saat menemui kendala.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- ========================================
+         SECTION BUKU POPULER
+         Bagian ini tetap mempertahankan style yang sebelumnya sudah oke.
+    ========================================= -->
+<section class="books-section">
+  <div class="container">
+    <h2 style="text-align:center;">Buku Populer</h2>
+
+    <div class="books-grid">
+
+      <div class="book-card">
+        <img src="images/buku1.png">
+        <p>Di Tanah Lada</p>
+      </div>
+
+      <div class="book-card">
+        <img src="images/buku2.png">
+        <p>Laut Bercerita</p>
+      </div>
+
+      <div class="book-card">
+        <img src="images/buku3.png">
+        <p>Atomic Habits</p>
+      </div>
+
+      <div class="book-card">
+        <img src="images/buku4.png">
+        <p>A Brief History</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      <!-- ========================================
+         SECTION ALUR
+         Bagian ini tetap mempertahankan style yang sebelumnya sudah oke.
+    ========================================= -->
+      <section id="alur" class="flow-section section-bg">
+        <div class="section-overlay"></div>
+        <div class="container flow-wrapper section-content">
+          <div class="flow-top">
+            <p class="section-label section-label-light">Alur Utama LiteraGo</p>
+            <h2>
+              Alur sederhana agar pengguna lebih mudah memahami cara kerja
+              aplikasi.
+            </h2>
+          </div>
+
+          <div class="flow-list">
+            <div class="flow-item">
+              <h3>1. Pilih Perpustakaan</h3>
+              <p>
+                User memilih perpustakaan terdekat agar stok buku sesuai lokasi.
+              </p>
+            </div>
+
+            <div class="flow-item">
+              <h3>2. Cari dan Pinjam Buku</h3>
+              <p>
+                User dapat melihat detail buku, tanggal pengembalian, dan metode
+                pembayaran.
+              </p>
+            </div>
+
+            <div class="flow-item">
+              <h3>3. Wishlist dan Notifikasi</h3>
+              <p>
+                Buku yang belum tersedia bisa disimpan, lalu pengguna mendapat
+                pengingat jatuh tempo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================
+         SECTION KONTAK
+         Background juga bisa diganti dengan foto sendiri dari CSS.
+    ========================================= -->
+      <section id="kontak" class="contact-section section-bg">
+        <div class="section-overlay"></div>
+        <div class="container contact-grid section-content">
+          <div class="contact-text">
+            <p class="section-label section-label-light">Kontak</p>
+            <h2>
+              Hubungi kami untuk mengetahui lebih lanjut tentang LiteraGo.
+            </h2>
+            <p>
+            Kami menghargai masukan resmi Anda untuk optimalisasi layanan LiteraGo. Tim kami akan merespons setiap laporan dan pertanyaan Anda secara komprehensif.
+            </p>
+          </div>
+
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="nama">Nama</label>
+              <input
+                type="text"
+                id="nama"
+                name="nama"
+                placeholder="Masukkan nama kamu"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Masukkan email kamu"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="pesan">Pesan</label>
+              <textarea
+                id="pesan"
+                name="pesan"
+                rows="5"
+                placeholder="Tulis pesan kamu di sini"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              Kirim Pesan
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ========================================
+         SECTION REVIEW
+         Background juga bisa diganti dengan foto sendiri dari CSS.
+    ========================================= -->
+
+     <section id="review" class="review-section">
+  <div class="container review-flex">
+    
+    <div class="review-content-side">
+      <div class="section-heading" style="text-align: left; margin: 0 0 30px 0;">
+        <h2 style="color: #173055;">Apa Kata Mereka?</h2>
+      </div>
+
+      <div class="review-vertical-list">
+        <article class="review-card">
+          <p class="review-text">"Sekarang pinjam buku jadi gampang banget!"</p>
+          <div class="review-user">
+            <img src="https://i.pravatar.cc/50?img=1" alt="Aulia" class="user-img">
+            <div class="user-info">
+              <h4>Aulia</h4>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <p class="review-text">"Nggak perlu ke perpustakaan lagi."</p>
+          <div class="review-user">
+            <img src="https://i.pravatar.cc/50?img=2" alt="Rizky" class="user-img">
+            <div class="user-info">
+              <h4>Rizky</h4>
+              <div class="stars">★★★★☆</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="left">
+<div class="phone">
+  <div class="screen">
+    <div class="app-header">
+      <img src="images/logo-literago.png" class="logo-mockup" alt="Logo">
+</div>
+
+      <div class="book-item">
+        <img src="images/buku1.png" alt="Di Tanah Lada">
+        <div class="book-info">
+          <h5>Di Tanah Lada</h5>
+          <div class="rating">⭐⭐⭐⭐☆</div>
+          <button>Pinjam</button>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <img src="images/buku2.png" alt="Laut Bercerita">
+        <div class="book-info">
+          <h5>Laut Bercerita</h5>
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+          <button>Pinjam</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+    </main>
+
+    <!-- ========================================
+       FOOTER
+       Footer dibuat simple seperti referensi:
+       baris kontak singkat, menu kecil, dan copyright.
+  ========================================= -->
+   <footer class="site-footer footer-bg-simple">
+  <div class="container footer-simple">
+    <div class="footer-socials">
+      <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="mailto:literago@email.com"><i class="fas fa-envelope"></i> Email</a>
+      <a href="tel:+6281234567890"><i class="fas fa-phone-alt"></i> Telepon</a>
+    </div>
+
+    <nav class="footer-nav">
+      <a href="#home">Home</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#fitur">Fitur</a>
+      <a href="#alur">Alur</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
+    <p class="footer-copy">Created by kelompok 40 | LiteraGo © 2026</p>
+  </div>
+</footer>
+  </body>
+</html>
