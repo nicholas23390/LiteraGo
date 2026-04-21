@@ -1,6 +1,5 @@
 /* ==================================================
    1. RESET DASAR
-   Bagian ini menghapus margin dan padding bawaan browser.
 ================================================== */
 * {
   margin: 0;
@@ -19,7 +18,8 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #0f2f60;
   color: #f7fbff;
-  line-height: 1.7;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 img {
@@ -42,12 +42,6 @@ a {
 
 /* ==================================================
    4. BACKGROUND SECTION
-   Semua section disiapkan agar mudah diganti background fotonya.
-
-   CARA PAKAI FOTO SENDIRI:
-   1. Simpan foto di folder images
-   2. Cari section yang mau diganti di bawah
-   3. Aktifkan background-image yang masih dikomentari
 ================================================== */
 .section-bg,
 .hero-section,
@@ -154,37 +148,7 @@ a {
 }
 
 /* ==================================================
-   6. BUTTON / TOMBOL
-================================================== */
-.btn {
-  display: inline-block;
-  padding: 14px 24px;
-  border-radius: 12px;
-  font-weight: 600;
-  transition: 0.3s ease;
-}
-
-.btn-primary {
-  background-color: #ff6b35;
-  color: #ffffff;
-  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.28);
-}
-
-.btn-primary:hover {
-  background-color: #e75b29;
-}
-
-.btn-secondary {
-  border: 1px solid rgba(255, 255, 255, 0.38);
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(8px);
-}
-
-/* ==================================================
    7. HEADER / NAVBAR
-   Navbar dibuat mirip versi literago-landing-simple:
-   gelap transparan, menu tengah, CTA di kanan.
 ================================================== */
 .site-header {
   position: fixed;
@@ -192,16 +156,24 @@ a {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(0, 119, 255, 0.18);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 10px 0;
+}
+
+.header-hidden {
+  transform: translateY(-100%);
 }
 
 .navbar {
-  min-height: 100px; /* Ditambah dikit biar logo gede gak sesak */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 90%;
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
 .logo-link {
@@ -209,58 +181,59 @@ a {
 }
 
 .logo {
-  width: 210px; /* Ukuran digedein (sebelumnya 175px) */
+  width: 160px;
   height: auto;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4)); /* Efek Drop Shadow */
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 45px; /* Jarak antar menu diperlebar (sebelumnya 28px) */
-  flex: 2;
+  gap: 40px;
+  flex: 2; 
 }
 
 .nav-menu a {
   color: #ffffff;
-  font-weight: 600;
-  font-size: 17px;
+  font-weight: 500;
+  font-size: 18px; 
   transition: 0.3s;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1); 
 }
 
 .nav-menu a:hover {
-  color: #ffdccf;
+  transform: scale(1.05);
 }
 
-/* Penyeimbang agar menu tetap di tengah */
 .navbar::after {
   content: "";
-  flex: 1; 
+  flex: 1;
 }
 
 /* ==================================================
    8. HERO / HOME
-   Placeholder kanan dihapus. Hero fokus ke teks dan background.
 ================================================== */
-.hero-content {
+.hero-section {
+  padding: 140px 0 60px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  min-height: calc(100vh - 120px);
 }
 
 .hero-flex {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 40px;
 }
 
 .hero-form {
   background: white;
-  padding: 30px;
+  padding: 25px;
   border-radius: 20px;
-  width: 320px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 330px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
   color: #173055;
 }
 
@@ -271,8 +244,8 @@ a {
 .hero-form input {
   width: 100%;
   padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
   border: 1px solid #ddd;
 }
 
@@ -282,19 +255,49 @@ a {
   background: #2563eb;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
 }
 
 .hero-text {
-  max-width: 760px;
+  flex: 1;
 }
 
 .hero-text h1 {
-  font-size: 58px;
-  line-height: 1.15;
-  margin-bottom: 18px;
-  color: #ffffff;
+  font-size: 52px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-form {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  width: 340px;
+  color: #173055;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.hero-form h3 { margin-bottom: 15px; font-size: 20px; text-align: center; 
+}
+
+.hero-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.hero-form button {
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .hero-description {
@@ -308,12 +311,12 @@ a {
    9. BOOKS SECTION
 ================================================== */
 .books-section {
-  padding: 80px 10%;
+  padding: 80px 0;
 }
 
 .books-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-top: 30px;
 }
@@ -321,14 +324,25 @@ a {
 .book-card {
   background: #f3f4f6;
   padding: 15px;
-  border-radius: 12px;
+  border-radius: 18px;
   text-align: center;
   color: #173055;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .book-card img {
   width: 100%;
-  border-radius: 10px;
+  max-width: 140px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.book-card h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
 /* ==================================================
@@ -378,42 +392,44 @@ a {
 /* ==================================================
    11. FITUR
 ================================================== */
+.features-section { padding: 80px 0; 
+}
+
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 25px;
+  justify-content: center;
 }
 
 .feature-card {
-  background-color: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(255, 255, 255, 0.72);
+  background: white;
+  padding: 30px 20px;
   border-radius: 24px;
-  padding: 28px 24px;
-  min-height: 260px;
-  box-shadow: 0 12px 26px rgba(8, 23, 49, 0.12);
+  text-align: center;
+  color: #173055;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .feature-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background-color: #f4eceb;
+  font-size: 30px;
+  margin-bottom: 15px;
+  background: #f0f4f9;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
-  margin-bottom: 18px;
+  border-radius: 50%;
 }
 
-.feature-card h3 {
-  font-size: 19px;
-  line-height: 1.35;
-  margin-bottom: 12px;
-  color: #173055;
+.feature-card h3 { font-size: 19px; margin-bottom: 12px; 
 }
 
-.feature-card p {
-  color: #64748b;
+.feature-card p { color: #64748b; font-size: 14px; 
 }
 
 /* ==================================================
@@ -521,10 +537,7 @@ a {
 }
 
 /* ==================================================
-  15 SECTION REVIEW
-================================================== */
-/* ==================================================
-   SECTION REVIEW + PHONE SIDE BY SIDE
+  15 REVIEW + PHONE BY SIDE
 ================================================== */
 .review-section {
   padding: 90px 0;
@@ -534,8 +547,7 @@ a {
 .review-flex {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 50px;
+  gap: 40px;
 }
 
 .review-content-side {
@@ -587,32 +599,28 @@ a {
   font-size: 12px;
 }
 
-/* CSS PHONE */
 .phone-side {
-  flex: 0 0 auto;
+  flex: 1;
   display: flex;
   justify-content: center;
+  max-width: 100%; 
 }
 
 .phone {
-  width: 260px;
+  width: 250px;
   height: 480px;
   background: #000;
   border-radius: 35px;
-  padding: 12px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+  padding: 10px;
   border: 4px solid #333;
 }
-  .screen {
-    background: white;
-    height: 100%;
-    border-radius: 15px;
-    padding: 15px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+ .screen {
+  background: white;
+  height: 100%;
+  border-radius: 25px;
+  overflow-y: auto;
+  padding: 10px;
+}
 
   .app-header img.logo-mockup {
   width: 120px;
@@ -644,10 +652,9 @@ a {
     font-weight: 700;
   }
 
-  /* Tombol Pinjam Biru Cerah */
   .book-info button {
     font-size: 12px;
-    background: #50aaff; /* Biru sesuai foto */
+    background: #50aaff;
     color: white;
     border: none;
     padding: 6px 15px;
@@ -662,12 +669,12 @@ a {
   }
 
 /* ==================================================
-   16. FOOTER - Versi Gepeng (Horizontal)
+   16. FOOTER
 ================================================== */
 .footer-bg-simple {
   background: rgba(11, 16, 29, 0.96);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 30px 0; /* Memberi ruang agar tidak terlalu sesak */
+  padding: 30px 0; 
 }
 
 .footer-simple {
@@ -676,24 +683,24 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 20px; /* Jarak antara baris kontak, menu, dan copyright */
+  gap: 20px; 
 }
 
 .footer-socials,
 .footer-nav {
   display: flex;
-  flex-direction: row; /* PAKSA HORIZONTAL */
+  flex-direction: row; 
   align-items: center;
   justify-content: center;
-  gap: 30px; /* Jarak antar link */
-  flex-wrap: nowrap; /* Jangan biarkan dia turun ke baris baru */
+  gap: 30px;
+  flex-wrap: nowrap;
 }
 
 .footer-socials a,
 .footer-nav a {
   color: #f3f7ff;
   font-size: 14px;
-  white-space: nowrap; /* Teks tidak akan pecah jadi 2 baris */
+  white-space: nowrap; 
   transition: 0.3s ease;
   display: flex;
   align-items: center;
@@ -720,113 +727,124 @@ a {
 }
 
 /* ==================================================
-   17. RESPONSIVE (OPTIMAL UNTUK DEVICE HP ASLI)
+   17. RESPONSIVE
 ================================================== */
-
-/* TABLET & HP LANDSCAPE */
 @media (max-width: 992px) {
-  .about-grid,
-  .contact-grid,
-  .review-flex {
-    grid-template-columns: 1fr !important;
+  .hero-text h1 { font-size: 42px; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; text-align: center; }
+  .books-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    position: fixed !important;
+    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .navbar {
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+    width: 92%;
+  }
+  
+  .logo-link {
+    flex: 0 0 auto; 
+  }
+
+  .logo {
+    width: 90px !important; 
+  }
+
+  .nav-menu {
+    display: flex !important; 
+    flex: 0 0 auto;
+    gap: 8px;
+    margin-left: auto; 
+  }
+
+  .nav-menu a {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .navbar::after {
+    display: none;
+  }
+
+  .hero-flex {
     flex-direction: column !important;
     text-align: center;
   }
 
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+.hero-section {
+    padding-top: 100px;
   }
 
-  .hero-text h1 {
-    font-size: 36px !important;
-  }
-}
-
-/* HP STANDAR (DEVICE ASLI) */
-@media (max-width: 768px) {
-  /* NAVBAR - Dibuat Minimalis */
-  .navbar {
-    flex-direction: column;
-    padding: 15px 0;
-    gap: 12px;
+  .hero-flex {
+    flex-direction: column !important;
+    text-align: center;
   }
 
-  .nav-menu {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap; /* Supaya menu aman kalau layar sangat sempit */
+  .hero-text h1 { font-size: 28px !important; 
   }
 
-  .nav-menu a {
-    font-size: 13px;
+  .hero-form {
+    width: 100%;
+    max-width: 310px;
+    margin: 0 auto;
   }
 
-  .nav-cta {
-    display: none; /* Sembunyikan tombol daftar di HP agar bersih */
+ .features-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 280px;
+    margin: 0 auto;
   }
 
-  /* LAYOUT UMUM HP */
-  .container {
-    width: 92% !important;
+  .feature-card {
+    width: 100%;
+    margin-bottom: 15px;
   }
 
-  section {
-    padding: 50px 0 !important; /* Jarak antar section diperkecil agar tidak terlalu panjang */
+  .review-flex {
+    flex-direction: column !important;
   }
 
-  .hero-text h1 {
-    font-size: 28px !important;
-    line-height: 1.2;
+  .phone {
+    width: 220px;
+    height: 430px;
   }
 
-  .section-heading h2 {
-    font-size: 26px !important;
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+    padding: 0 10px;
   }
 
-  /* FOOTER - Tetap Berjajar Ke Samping (Fit Device) */
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
+  .book-card { padding: 12px; 
   }
 
-  .footer-socials, 
-  .footer-nav {
+  .footer-socials, .footer-nav {
     display: flex !important;
-    flex-direction: row !important; 
-    justify-content: center !important;
-    flex-wrap: nowrap !important; 
-    gap: 12px; 
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center;
+    gap: 10px;
   }
 
-  .footer-socials a, 
-  .footer-nav a {
+  .footer-socials a, .footer-nav a { 
     font-size: 11px !important; 
     white-space: nowrap; 
   }
 
-  .footer-copy {
-    font-size: 10px;
-    margin-top: 10px;
-  }
 }
-
-/* HP KECIL (DEVICE LAMA) */
 @media (max-width: 480px) {
-  .hero-text h1 {
-    font-size: 24px !important;
-  }
-
-  .footer-socials, 
-  .footer-nav {
-    gap: 8px;
-  }
-
-  .footer-socials a, 
-  .footer-nav a {
-    font-size: 10px !important;
+  .hero-text h1 { font-size: 26px !important; }
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
   }
 }
